@@ -13,31 +13,33 @@
         <div class="logo">
             <img src="../../Assets/logo.png" alt="Logo">
         </div>
-        <ul>
-            <li>Home</li>
-            <li>Eventos</li>
+        <ul class="menu">
+            <li class="item-menu">Home</li>
+            <li class="item-menu">Eventos</li>
         </ul>
     </header>
     <h1>Hello World!</h1>
     <footer>
         <div class="box">
-            <div class="redes">
-                <label for="">Redes Sociais</label>
-                <a href="http://www.instagram.com">Instagram</a>
-                <a href="">Facebook</a>
-                <a href="">Twitter</a>
-            </div>
-            <div class="contato">
-                <label for="">Contatos</label>
-                <label for="">E-mail</label>
-                <label for="">Telefone</label>
-            </div>
-        </div>
-        
-        <div class="privacidade">
-            <label for="Política de Privacidade"></label>
-            <label for="">© Copyright Próxima Parada - 2022 / Criado por Luan</label>
-        </div>
+            <ul>
+                <div class="redes">
+                    <li><h2>Redes Sociais</h2>
+                        <a href="#"><img src="../../Assets/whatsapp.png" alt="Logo-Whatsapp"></a>
+                        <a href="#"><img src="../../Assets/facebook.png" alt="Logo-Facebook"></a>
+                        <a href="#"><img src="../../Assets/instagram.png" alt="Logo-Instagram"></a>
+                    </li>
+                </div>
+                <div class="contato">
+                    <label for="">Contatos</label>
+                    <label for="">E-mail</label>
+                    <label for="">Telefone</label>
+                </div>
+                <div class="privacidade">
+                    <label for="Política de Privacidade"></label>
+                    <label for="">© Copyright Próxima Parada - 2022 / Criado por Luan</label>
+                </div>
+            </ul>
+            
     </footer>
 </body>
 </html>
