@@ -19,7 +19,17 @@
             <a href="../Event/cadastro.php"><li class="item-menu">Eventos</li></a>
         </ul>
     </header>
-    <h1>Hello World!</h1>
+
+    <div class="banner">
+        
+    </div>
+    <div class="informativo">
+        <h1>Informativo</h1>
+        <p>Não sabe para onde ir? O Próxima Parada nasceu para te ajudar a escolher um rolê topzeira &#128526;. Sabe de alguma
+            festa? Cadastra o evento no nosso site para outras pessoas possam se informar e acima de tudo, se divertir &#128527;.
+        </p>
+    </div>
+
     <footer>
         <div class="privacidade">
             <label for="">© Copyright Próxima Parada - 2022 / Criado por Luan</label>
