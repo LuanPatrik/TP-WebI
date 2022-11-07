@@ -11,35 +11,19 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../../Assets/logo.png" alt="Logo">
+            <a href="./home.php"><img src="../../Assets/logo.png" 
+            alt="Logo"></a>
         </div>
         <ul class="menu">
-            <li class="item-menu">Home</li>
-            <li class="item-menu">Eventos</li>
+            <a href="./home.php"><li class="item-menu">Home</li></a>
+            <a href="../Event/cadastro.php"><li class="item-menu">Eventos</li></a>
         </ul>
     </header>
     <h1>Hello World!</h1>
     <footer>
-        <div class="box">
-            <ul>
-                <div class="redes">
-                    <li><h2>Redes Sociais</h2>
-                        <a href="#"><img src="../../Assets/whatsapp.png" alt="Logo-Whatsapp"></a>
-                        <a href="#"><img src="../../Assets/facebook.png" alt="Logo-Facebook"></a>
-                        <a href="#"><img src="../../Assets/instagram.png" alt="Logo-Instagram"></a>
-                    </li>
-                </div>
-                <div class="contato">
-                    <label for="">Contatos</label>
-                    <label for="">E-mail</label>
-                    <label for="">Telefone</label>
-                </div>
-                <div class="privacidade">
-                    <label for="Política de Privacidade"></label>
-                    <label for="">© Copyright Próxima Parada - 2022 / Criado por Luan</label>
-                </div>
-            </ul>
-            
+        <div class="privacidade">
+            <label for="">© Copyright Próxima Parada - 2022 / Criado por Luan</label>
+        </div>
     </footer>
 </body>
 </html>

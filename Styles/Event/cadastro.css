@@ -1,9 +1,41 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, #2D5371, #B2D9F7);
+    background-image: linear-gradient(to right, #2D5371, #B2D9F7);
+}
+
+header{
+    background: #2D5371;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 16vh;
+}
+
+.logo img{
+    width: 130px;
+    height: 130px;
+    margin: 3em;
+}
+
+.menu{
+    display: flex;
+    margin: 18em;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.item-menu{
+    color: white;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2rem;
+    font-size: 20px;
 }
 
 .container{
+    margin-top: 5em;
     color: white;
     position: absolute;
     top: 50%;
@@ -65,4 +97,24 @@ legend{
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background: rgb(26, 25, 25);
+    height: 12vh;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.privacidade{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
 }

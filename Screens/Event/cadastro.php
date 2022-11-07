@@ -5,9 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Evento</title>
-    <link rel="stylesheet" href="../Styles/Event/cadastro.css">
+    <link rel="stylesheet" href="../../Styles/Event/cadastro.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="../Home/home.php"><img src="../../Assets/logo.png" 
+            alt="Logo"></a>
+        </div>
+        <ul class="menu">
+            <a href="../Home/home.php"><li class="item-menu">Home</li></a>
+            <a href="../Event/cadastro.php"><li class="item-menu">Eventos</li></a>
+        </ul>
+    </header>
+    
     <div class="container">
         <form action="">
             <fieldset>
@@ -47,5 +58,11 @@
             </fieldset>
         </form>
     </div>
+
+    <!-- <footer>
+        <div class="privacidade">
+            <label for="">© Copyright Próxima Parada - 2022 / Criado por Luan</label>
+        </div>
+    </footer> -->
 </body>
 </html>
