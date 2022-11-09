@@ -17,6 +17,7 @@
         <ul class="menu">
             <a href="./home.php"><li class="item-menu">Home</li></a>
             <a href="../Event/cadastro.php"><li class="item-menu">Eventos</li></a>
+            <a href="../Login/login.html"><img src="../../Assets/user.png" alt="Usuário"></a>
         </ul>
     </header>
 

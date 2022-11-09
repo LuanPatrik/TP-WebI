@@ -1,6 +1,6 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(45deg, #2D5371, #B2D9F7);
+    background-image: linear-gradient(90deg, #2D5371, #B2D9F7);
 }
 
 .container{
@@ -14,6 +14,12 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: auto;
+    height: auto;
 }
 
 input{
@@ -21,6 +27,8 @@ input{
     border:  none;
     outline: none;
     font-size: 15px;
+    width: 100%;
+    
 }
 
 button{
@@ -31,8 +39,16 @@ button{
     border-radius: 5%;
     color: white;
     font-size: 18px;
+    width: 100%;
 }
 
 button:hover{
     background-color: #487AA1;
+}
+
+.cadastro a{
+    color: white;
+    margin-top: 20%;
+    text-decoration: none;
+    cursor: pointer;
 }
