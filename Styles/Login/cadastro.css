@@ -5,35 +5,9 @@ body{
     background-image: linear-gradient(to right, #2D5371, #B2D9F7);
 }
 
-header{
-    background: #2D5371;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 16vh;
-}
-
-.logo img{
-    width: 130px;
-    height: 130px;
-    margin: 3em;
-}
-
-.menu{
-    display: flex;
-    margin: 18em;
-}
-
-a:link{
-    text-decoration: none;
-}
-
-.item-menu{
-    color: white;
-    list-style-type: none;
-    cursor: pointer;
-    padding: 2rem;
-    font-size: 20px;
+.voltar{
+    margin-left: 1.5em;
+    margin-top: 1em;
 }
 
 .container{
@@ -102,24 +76,4 @@ legend{
 
 #submit:hover{
     background-color: #487AA1;
-}
-
-footer{
-    display: flex;
-    flex-direction: column;
-    background: rgb(26, 25, 25);
-    height: 12vh;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.privacidade{
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
 }
