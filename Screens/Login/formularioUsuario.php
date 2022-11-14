@@ -15,7 +15,7 @@
                     method: 'POST',
                     body: dados
                 };
-
+                    console.log('Olá');
                 fetch('./cadastroUsuario.php', config)
                 .then((response) => {
                     return response.json();
@@ -25,18 +25,32 @@
                     let p = document.querySelector('p');
                     p.innerText = json.mensagem;
                     if (json.status == 'ok') {
-                        p.style.color = 'green';
+                        p.style.color = 'white';
+                        p.style.backgroundColor = 'green';
+                        p.style.borderRadius = '5px';
+                        p.style.justifyContent = 'center';
                     }else{
-                        p.style.color = 'red';
+                        p.style.color = 'white';
+                        p.style.backgroundColor = 'red';
+                        p.style.borderRadius = '5px';
                     }
                 })
-
             });
 
             document.forms[0].addEventListener('submit', (event) => {
                 event.preventDefault();
             });
         })
+
+        function limparCampos(){
+            document.getElementById('name').value = '';
+            document.getElementById('cpf').value = '';
+            document.getElementById('data_nasc').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('usuario').value = '';
+            document.getElementById('senha').value = '';
+            document.getElementById('confirmarSenha').value = '';
+        }
     </script>
 </head>
 <body>
@@ -60,7 +74,12 @@
                 <br><br>
                 <div class="inputBox">
                     <label for="date">Data de Nascimento</label>
-                    <input type="date" name="date" id="date" class="input" required>
+                    <input type="date" name="data_nasc" id="data_nasc" class="input" required>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" class="input" required>
+                    <label for="email" class="title">E-mail</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
@@ -74,14 +93,16 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="input" required>
-                    <label for="senha" class="title">Confirme sua Senha</label>
+                    <input type="password" name="confirmarSenha" id="confirmarSenha" class="input" required>
+                    <label for="confirmarSenha" class="title">Confirme sua Senha</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit">
+                <button name="submit" id="submit" onclick="limparCampos()">Salvar</button>
             </fieldset>
         </form>
-        <p></p>
+        <div class="mensagem">
+            <p></p>
+        </div>
     </div>
 </body>
 </html>

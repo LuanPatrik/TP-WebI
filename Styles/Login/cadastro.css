@@ -57,7 +57,7 @@ legend{
 }
 
 .input:focus ~ .title,
-.input:valid ~.title{
+.input:valid ~ .title{
     top: -20px;
     font-size: 12px;
     color: #B2D9F7;

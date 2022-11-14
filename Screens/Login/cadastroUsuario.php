@@ -7,22 +7,21 @@
     $dao = new DAOusuario();
 
     $id = filter_input(INPUT_POST, 'id');
-    $nome = filter_input(INPUT_POST, 'nome');
+    $nome = filter_input(INPUT_POST, 'name');
     $cpf = filter_input(INPUT_POST, 'cpf');
     $data_nasc = filter_input(INPUT_POST, 'data_nasc');
+    $email = filter_input(INPUT_POST, 'email');
     $usuario = filter_input(INPUT_POST, 'usuario');
     $senha = filter_input(INPUT_POST, 'senha');
 
-    echo 'Nome '.$nome;
-
     $obj->setId_usuario($id);
-    $obj->setId_usuario($nome);
-    $obj->setId_usuario($cpf);
-    $obj->setId_usuario($data_nasc);
-    $obj->setId_usuario($usuario);
-    $obj->setId_usuario($senha);
+    $obj->setNome($nome);
+    $obj->setCpf($cpf);
+    $obj->setData_nasc($data_nasc);
+    $obj->setUsuario($usuario);
+    $obj->setSenha($senha);
 
-    if ($nome && $data_nasc && $cpf && $usuario && $senha) {
+    if ($nome && $data_nasc && $cpf && $email && $usuario && $senha) {
         $dao->incluir($obj);
         $retorno = ['status' => 'ok', 'mensagem' => 'Usuário cadastrado com sucesso!'];
     }else {
