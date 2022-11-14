@@ -1,54 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Styles/Login/cadastro.css">
-    <title>Cadastro de Usuário</title>
-</head>
-<body>
-    <div class="voltar">
-        <a href="../Login/login.html"><img src="../../Assets/voltar.png" alt="Voltar"></a>
-    </div>
-    <div class="container">
-        <form action="">
-            <fieldset>
-                <legend><b>Cadastro de Usuário</b></legend>
-                <br>
-                <div class="inputBox">
-                    <input type="text" name="name" id="name" class="input" required>
-                    <label for="name" class="title">Nome</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="cpf" id="cpf" class="input" required>
-                    <label for="cpf" class="title">CPF</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="date">Data de Nascimento</label>
-                    <input type="date" name="date" id="date" class="input" required>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="usuario" id="usuario" class="input" required>
-                    <label for="usuario" class="title">Usuário</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="senha" id="senha" class="input" required>
-                    <label for="senha" class="title">Senha</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="senha" id="senha" class="input" required>
-                    <label for="senha" class="title">Confirme sua Senha</label>
-                </div>
-                <br><br>
-                <input type="submit" name="submit" id="submit">
-            </fieldset>
-        </form>
-    </div>
-</body>
-</html>
+<?php
+    require_once '../../Model/Usuario.php';
+    require_once '../../DAO/conexao.php';
+    require_once '../../DAO/DAOUsuario.php';
+
+    $obj = new Usuario();
+    $dao = new DAOusuario();
+
+    $id = filter_input(INPUT_POST, 'id');
+    $nome = filter_input(INPUT_POST, 'nome');
+    $cpf = filter_input(INPUT_POST, 'cpf');
+    $data_nasc = filter_input(INPUT_POST, 'data_nasc');
+    $usuario = filter_input(INPUT_POST, 'usuario');
+    $senha = filter_input(INPUT_POST, 'senha');
+
+    echo 'Nome '.$nome;
+
+    $obj->setId_usuario($id);
+    $obj->setId_usuario($nome);
+    $obj->setId_usuario($cpf);
+    $obj->setId_usuario($data_nasc);
+    $obj->setId_usuario($usuario);
+    $obj->setId_usuario($senha);
+
+    if ($nome && $data_nasc && $cpf && $usuario && $senha) {
+        $dao->incluir($obj);
+        $retorno = ['status' => 'ok', 'mensagem' => 'Usuário cadastrado com sucesso!'];
+    }else {
+        $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
+    }
+    echo json_encode($retorno);
+?>
