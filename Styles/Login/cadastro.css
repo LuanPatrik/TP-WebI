@@ -1,4 +1,6 @@
 body{
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -76,4 +78,15 @@ legend{
 
 #submit:hover{
     background-color: #487AA1;
+}
+
+.mensagem{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;;
+    width: 20%;
+    padding: 6px;
+    font-size: 18px;
+    border-radius: 5px;
 }

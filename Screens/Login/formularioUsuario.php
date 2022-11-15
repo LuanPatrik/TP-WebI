@@ -22,17 +22,13 @@
                 })
                 .then((json) => {
                     console.log(json);
-                    let p = document.querySelector('p');
-                    p.innerText = json.mensagem;
+                    let mensagem = document.querySelector('.mensagem');
+                    mensagem.innerText = json.mensagem;
                     if (json.status == 'ok') {
-                        p.style.color = 'white';
-                        p.style.backgroundColor = 'green';
-                        p.style.borderRadius = '5px';
-                        p.style.justifyContent = 'center';
+                        mensagem.style.backgroundColor = 'green';
+                        limparCampos();
                     }else{
-                        p.style.color = 'white';
-                        p.style.backgroundColor = 'red';
-                        p.style.borderRadius = '5px';
+                        mensagem.style.backgroundColor = 'red';
                     }
                 })
             });
@@ -55,7 +51,7 @@
 </head>
 <body>
     <div class="voltar">
-        <a href="../Login/login.html"><img src="../../Assets/voltar.png" alt="Voltar"></a>
+        <a href="../Login/login.php"><img src="../../Assets/voltar.png" alt="Voltar"></a>
     </div>
     <div class="container">
         <form action="" method="POST">
@@ -97,12 +93,13 @@
                     <label for="confirmarSenha" class="title">Confirme sua Senha</label>
                 </div>
                 <br><br>
-                <button name="submit" id="submit" onclick="limparCampos()">Salvar</button>
+                <button name="submit" id="submit">Salvar</button>
             </fieldset>
         </form>
-        <div class="mensagem">
-            <p></p>
-        </div>
+        
+    </div>
+    <div class="mensagem">
+        <p></p>
     </div>
 </body>
 </html>

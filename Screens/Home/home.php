@@ -1,6 +1,13 @@
-
+<?php
+    session_start();
+    if (!isset($_SESSION['usuario']) == true) {
+        header('Location: ../Login/login.php');
+    }
+    $logado = $_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +15,25 @@
     <link rel="stylesheet" href="../../styles/Home/home.css">
     <title>Home</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <a href="./home.php"><img src="../../Assets/logo.png" 
-            alt="Logo"></a>
+            <a href="./home.php"><img src="../../Assets/logo.png" alt="Logo"></a>
         </div>
         <ul class="menu">
-            <a href="./home.php"><li class="item-menu">Home</li></a>
-            <a href="../Event/cadastro.php"><li class="item-menu">Eventos</li></a>
-            <a href="../Login/login.html"><img src="../../Assets/user.png" alt="Usuário"></a>
+            <a href="./home.php">
+                <li class="item-menu">Home</li>
+            </a>
+            <a href="../Event/cadastro.php">
+                <li class="item-menu">Eventos</li>
+            </a>
+            <a href="../Login/login.php"><img src="../../Assets/user.png" alt="Usuário"></a>
         </ul>
     </header>
 
     <div class="banner">
-        
+
     </div>
     <div class="informativo">
         <h1>Informativo</h1>
@@ -37,5 +48,5 @@
         </div>
     </footer>
 </body>
-</html>
 
+</html>

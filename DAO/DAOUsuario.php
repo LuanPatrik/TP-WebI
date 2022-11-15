@@ -1,13 +1,13 @@
 <?php
     Class DAOUsuario
     {
-        public function exibirLista()
+        public function verificaUsuario($usuario, $senha)
         {
-            $lista = [];
-            $pst = Conexao::getPreparedStatement('SELECT * FROM usuario;');
+            $sql = "SELECT id_usuario FROM usuario WHERE usuario = '$usuario' AND senha = '$senha';";
+            $pst = Conexao::getPreparedStatement($sql);
             $pst->execute();
-            $lista = $pst->fetchAll(PDO::FETCH_ASSOC);
-            return $lista;
+            $id = $pst->fetchAll(PDO::FETCH_ASSOC);
+            return $id;
         }
 
         public function incluir(Usuario $usuario)
