@@ -14,6 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/Home/home.css">
     <title>Home</title>
+
+    
 </head>
 
 <body>
@@ -25,11 +27,30 @@
             <a href="./home.php">
                 <li class="item-menu">Home</li>
             </a>
-            <a href="../Event/cadastro.php">
+            <a href="../Event/formularioEvento.php">
                 <li class="item-menu">Eventos</li>
             </a>
-            <a href="../Login/login.php"><img src="../../Assets/user.png" alt="Usuário"></a>
         </ul>
+        <div class="navigation">
+            <div class="userBox">
+                <div class="imgUser">
+                    <img src="../../Assets/user.png" alt="Usuário">
+                </div>
+                <p class="usuarioLogado">Luan Patrik</p>
+            </div>
+            <div class="menuToggle"></div>
+            <ul class="menuUsuario">
+                <li><a href=""><img src="../../Assets/userConta.png" alt="">Conta</a></li>
+                <li><a href="./sair.php"><img src="../../Assets/sair.png" alt="">Sair</a></li>
+            </ul>
+        </div>
+        <script>
+            let menuToggle = document.querySelector('.menuToggle');
+            let navigation = document.querySelector('.navigation');
+            menuToggle.onclick = function() {
+                navigation.classList.toggle('active');
+            }
+        </script>
     </header>
 
     <div class="banner">

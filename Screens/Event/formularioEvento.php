@@ -6,6 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Evento</title>
     <link rel="stylesheet" href="../../Styles/Event/cadastro.css">
+
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('button').addEventListener('click', () => {
+                const dados = new FormData(document.forms[0]);
+                const config ={
+                    method: 'POST',
+                    body: dados
+                };
+                fetch('./cadastroEvento.php', config)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((json) => {
+                    console.log(json);
+                    let mensagem = document.querySelector('.mensagem');
+                    mensagem.innerText = json.mensagem;
+                    if (json.status == 'ok') {
+                        mensagem.style.backgroundColor = 'green';
+                        limparCampos();
+                    }else{
+                        mensagem.style.backgroundColor = 'red';
+                    }
+                })
+            });
+
+            document.forms[0].addEventListener('submit', (event) => {
+                event.preventDefault();
+            });
+        })
+
+        function limparCampos(){
+            document.getElementById('name').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('cidade').value = '';
+            document.getElementById('bairro').value = '';
+            document.getElementById('rua').value = '';
+            document.getElementById('value').value = '';
+        }
+    </script>
+
 </head>
 <body>
     <header>
@@ -20,7 +61,7 @@
     </header>
     
     <div class="container">
-        <form action="">
+        <form action="" method="POST">
             <fieldset>
                 <legend><b>Formulário de Evento</b></legend>
                 <br>
@@ -54,9 +95,12 @@
                     <label for="value" class="title">Valor</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit">
+                <Button name="submit" id="submit">Salvar</Button>
             </fieldset>
         </form>
+        <div class="mensagem">
+            
+        </div>
     </div>
 
     <!-- <footer>

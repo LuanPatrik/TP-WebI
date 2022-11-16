@@ -15,7 +15,6 @@
                     method: 'POST',
                     body: dados
                 };
-                    console.log('Olá');
                 fetch('./cadastroUsuario.php', config)
                 .then((response) => {
                     return response.json();
