@@ -134,6 +134,10 @@ a:link{
     transform: translateY(0px) rotate(-45deg);
 }
 
+.userBox p{
+    color: white;
+}
+
 .menuUsuario{
     position: absolute;
     width: 100%;

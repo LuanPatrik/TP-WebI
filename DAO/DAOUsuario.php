@@ -3,7 +3,7 @@
     {
         public function verificaUsuario($usuario, $senha)
         {
-            $sql = "SELECT id_usuario FROM usuario WHERE usuario = '$usuario' AND senha = '$senha';";
+            $sql = "SELECT id_usuario, nome FROM usuario WHERE usuario = '$usuario' AND senha = '$senha';";
             $pst = Conexao::getPreparedStatement($sql);
             $pst->execute();
             $id = $pst->fetchAll(PDO::FETCH_ASSOC);

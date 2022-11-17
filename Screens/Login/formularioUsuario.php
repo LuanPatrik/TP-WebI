@@ -21,13 +21,14 @@
                 })
                 .then((json) => {
                     console.log(json);
-                    let mensagem = document.querySelector('.mensagem');
+                    let mensagem = document.querySelector('.mensagem p');
+                    let div = document.querySelector('.mensagem');
                     mensagem.innerText = json.mensagem;
                     if (json.status == 'ok') {
-                        mensagem.style.backgroundColor = 'green';
+                        div.style.backgroundColor = 'green';
                         limparCampos();
                     }else{
-                        mensagem.style.backgroundColor = 'red';
+                        div.style.backgroundColor = 'red';
                     }
                 })
             });
@@ -95,10 +96,10 @@
                 <button name="submit" id="submit">Salvar</button>
             </fieldset>
         </form>
-        
     </div>
     <div class="mensagem">
         <p></p>
     </div>
+    
 </body>
 </html>

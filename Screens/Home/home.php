@@ -1,9 +1,11 @@
 <?php
     session_start();
-    if (!isset($_SESSION['usuario']) == true) {
-        header('Location: ../Login/login.php');
+    $userLogado = '';
+    if (isset($_SESSION['id_usuario']) > 0) {
+        $idLogado = $_SESSION['id_usuario'];
+        $userLogado = $_SESSION['nome'];
     }
-    $logado = $_SESSION['usuario'];
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/Home/home.css">
     <title>Home</title>
-
-    
 </head>
 
 <body>
@@ -36,11 +36,11 @@
                 <div class="imgUser">
                     <img src="../../Assets/user.png" alt="Usuário">
                 </div>
-                <p class="usuarioLogado">Luan Patrik</p>
+                <p class="usuarioLogado"><?php echo ''.$userLogado ?></p>
             </div>
             <div class="menuToggle"></div>
             <ul class="menuUsuario">
-                <li><a href=""><img src="../../Assets/userConta.png" alt="">Conta</a></li>
+                <li><a href="./contaPerfil.php"><img src="../../Assets/userConta.png" alt="">Perfil</a></li>
                 <li><a href="./sair.php"><img src="../../Assets/sair.png" alt="">Sair</a></li>
             </ul>
         </div>
