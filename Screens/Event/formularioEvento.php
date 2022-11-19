@@ -38,12 +38,12 @@
         })
 
         function limparCampos(){
-            document.getElementById('name').value = '';
-            document.getElementById('date').value = '';
+            document.getElementById('nome').value = '';
+            document.getElementById('data').value = '';
             document.getElementById('cidade').value = '';
             document.getElementById('bairro').value = '';
             document.getElementById('rua').value = '';
-            document.getElementById('value').value = '';
+            document.getElementById('valor').value = '';
         }
     </script>
 
@@ -66,13 +66,13 @@
                 <legend><b>Formulário de Evento</b></legend>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="name" id="name" class="input" required>
+                    <input type="text" name="nome" id="nome" class="input" required>
                     <label for="name" class="title">Nome do Evento</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
                     <label for="date">Data do Evento</label>
-                    <input type="date" name="date" id="date" class="input" required>
+                    <input type="date" name="data" id="data" class="input" required>
                 </div>
                 <br><br>
                 <div class="inputBox">
@@ -91,8 +91,8 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="value" id="value" class="input" required>
-                    <label for="value" class="title">Valor</label>
+                    <input type="text" name="valor" id="valor" class="input" required>
+                    <label for="valor" class="title">Valor</label>
                 </div>
                 <br><br>
                 <Button name="submit" id="submit">Salvar</Button>

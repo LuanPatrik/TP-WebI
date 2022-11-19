@@ -9,11 +9,10 @@ body{
 }
 
 .container{
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #487AA1;
     padding: 30px;
-    width: 50%;
+    width: 60%;
     border: 1px solid black;
     border-radius: 20px;
 }
@@ -29,14 +28,14 @@ body{
     outline: none;
     color: white;
     font-size: 15px;
-    width: 130%;
+    width: 40%;
     margin-top: 7px;
 }
 
 #submit{
     background-color: #24425A;
-    padding: 10px;
-    width: 55%;
+    padding: 15px;
+    width: 20%;
     border: none;
     border-radius: 25px;
     color: white;

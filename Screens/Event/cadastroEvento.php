@@ -6,8 +6,8 @@
     $obj = new Evento();
     $dao = new DAOEvento();
 
-    $nome = filter_input(INPUT_POST, 'name');
-    $data = filter_input(INPUT_POST, 'date');
+    $nome = filter_input(INPUT_POST, 'nome');
+    $data = filter_input(INPUT_POST, 'data');
     $cidade = filter_input(INPUT_POST, 'cidade');
     $bairro = filter_input(INPUT_POST, 'bairro');
     $rua = filter_input(INPUT_POST, 'rua');

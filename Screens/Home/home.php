@@ -40,7 +40,7 @@
             </div>
             <div class="menuToggle"></div>
             <ul class="menuUsuario">
-                <li><a href="./contaPerfil.php"><img src="../../Assets/userConta.png" alt="">Perfil</a></li>
+                <li><a href="../Perfil/contaPerfil.php"><img src="../../Assets/userConta.png" alt="">Perfil</a></li>
                 <li><a href="./sair.php"><img src="../../Assets/sair.png" alt="">Sair</a></li>
             </ul>
         </div>

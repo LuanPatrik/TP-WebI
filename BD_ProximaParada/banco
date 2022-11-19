@@ -17,6 +17,7 @@ CREATE TABLE usuario(
     nome VARCHAR(225) NOT NULL,
     cpf LONG NOT NULL,
     data_nasc DATE NOT NULL,
+    email VARCHAR(100),
     usuario VARCHAR(50),
     senha VARCHAR(50)
 );

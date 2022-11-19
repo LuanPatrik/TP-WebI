@@ -5,14 +5,16 @@
         private $nome;
         private $cpf;
         private $data_nasc;
+        private $email;
         private $usuario;
         private $senha;
 
-        public function __construct($n = null, $c = null, $d = null, $u = null, $s = null)
+        public function __construct($n = null, $c = null, $d = null, $e = null, $u = null, $s = null)
         {
             $this->nome = $n;
             $this->cpf = $c;
             $this->data_nasc = $d;
+            $this->email = $e;
             $this->usuario = $u;
             $this->senha = $s;
         }
@@ -61,6 +63,18 @@
         public function setData_nasc($data_nasc)
         {
                 $this->data_nasc = $data_nasc;
+
+                return $this;
+        }
+        
+        public function getEmail()
+        {
+                return $this->email;
+        }
+
+        public function setEmail($email)
+        {
+                $this->email = $email;
 
                 return $this;
         }

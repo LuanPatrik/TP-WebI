@@ -13,8 +13,12 @@
         $result = $dao->verificaUsuario($usuario, $senha);
 
         if ($result != null) {
-            $_SESSION['nome'] = $result[0]['nome'];
             $_SESSION['id_usuario'] = $result[0]['id_usuario'];
+            $_SESSION['nome'] = $result[0]['nome'];
+            $_SESSION['cpf'] = $result[0]['cpf'];
+            $_SESSION['data_nasc'] = $result[0]['data_nasc'];
+            $_SESSION['email'] = $result[0]['email'];
+            $_SESSION['usuario'] = $result[0]['usuario'];
             header('Location: ../Home/home.php');
         }
         // else {
