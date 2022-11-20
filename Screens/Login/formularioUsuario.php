@@ -22,13 +22,12 @@
                 .then((json) => {
                     console.log(json);
                     let mensagem = document.querySelector('.mensagem p');
-                    let div = document.querySelector('.mensagem');
                     mensagem.innerText = json.mensagem;
                     if (json.status == 'ok') {
-                        div.style.backgroundColor = 'green';
+                        mensagem.style.backgroundColor = 'green';
                         limparCampos();
                     }else{
-                        div.style.backgroundColor = 'red';
+                        mensagem.style.backgroundColor = 'red';
                     }
                 })
             });

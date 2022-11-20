@@ -21,7 +21,7 @@
                 })
                 .then((json) => {
                     console.log(json);
-                    let mensagem = document.querySelector('.mensagem');
+                    let mensagem = document.querySelector('.mensagem p');
                     mensagem.innerText = json.mensagem;
                     if (json.status == 'ok') {
                         mensagem.style.backgroundColor = 'green';
@@ -55,8 +55,15 @@
             alt="Logo"></a>
         </div>
         <ul class="menu">
-            <a href="../Home/home.php"><li class="item-menu">Home</li></a>
-            <a href="../Event/cadastro.php"><li class="item-menu">Eventos</li></a>
+            <a href="../Home/home.php">
+                <li class="item-menu">Home</li>
+            </a>
+            <a href="../Event/listagem.php">
+                <li class="item-menu">Eventos</li>
+            </a>
+            <a href="../Event/formularioEvento.php">
+                <li class="item-menu">Criar Eventos</li>
+            </a>
         </ul>
     </header>
     
@@ -98,9 +105,10 @@
                 <Button name="submit" id="submit">Salvar</Button>
             </fieldset>
         </form>
-        <div class="mensagem">
-            
-        </div>
+        
+    </div>
+    <div class="mensagem">
+        <p></p>
     </div>
 
     <!-- <footer>

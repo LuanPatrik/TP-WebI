@@ -9,10 +9,15 @@ body{
 }
 
 .container{
-    justify-content: space-between;
+    display: flex;
+    align-items: center;
     background-color: #487AA1;
     padding: 30px;
-    width: 60%;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
     border: 1px solid black;
     border-radius: 20px;
 }
@@ -28,14 +33,14 @@ body{
     outline: none;
     color: white;
     font-size: 15px;
-    width: 40%;
+    width: 120%;
     margin-top: 7px;
 }
 
 #submit{
     background-color: #24425A;
     padding: 15px;
-    width: 20%;
+    width: 60%;
     border: none;
     border-radius: 25px;
     color: white;

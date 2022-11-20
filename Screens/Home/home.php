@@ -27,8 +27,11 @@
             <a href="./home.php">
                 <li class="item-menu">Home</li>
             </a>
-            <a href="../Event/formularioEvento.php">
+            <a href="../Event/listagem.php">
                 <li class="item-menu">Eventos</li>
+            </a>
+            <a href="../Event/formularioEvento.php">
+                <li class="item-menu">Criar Eventos</li>
             </a>
         </ul>
         <div class="navigation">

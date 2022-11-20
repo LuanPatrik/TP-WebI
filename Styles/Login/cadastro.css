@@ -83,6 +83,24 @@ legend{
 .mensagem{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.mensagem p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    margin-top: 38%;
+    width: 20%;
+}
+
+/* .mensagem{
+    display: flex;
+    justify-content: center;
     bottom: 0;
     color: white;
     width: 20%;
@@ -93,4 +111,4 @@ legend{
 
 .mensagem p{
     text-align: center;
-}
+} */

@@ -105,6 +105,24 @@ legend{
     background-color: #487AA1;
 }
 
+.mensagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    margin-top: 38%;
+    width: 20%;
+}
+
 footer{
     display: flex;
     flex-direction: column;

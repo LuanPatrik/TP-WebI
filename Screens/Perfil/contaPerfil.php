@@ -26,6 +26,7 @@
                     mensagem.innerText = json.mensagem;
                     if (json.status == 'ok') {
                         div.style.backgroundColor = 'green';
+                        // limparCampos();
                     }else{
                         div.style.backgroundColor = 'red';
                     }
@@ -36,6 +37,16 @@
                 event.preventDefault();
             });
         })
+
+        function limparCampos(){
+            document.getElementById('name').value = '';
+            document.getElementById('cpf').value = '';
+            document.getElementById('data_nasc').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('usuario').value = '';
+            document.getElementById('senha').value = '';
+            document.getElementById('confirmarSenha').value = '';
+        }
     </script>
 </head>
 <body>
@@ -48,6 +59,8 @@
         $email = $_SESSION['email'];
         $usuario = $_SESSION['usuario'];
     ?>
+
+    <a href="../Home/home.php">Voltar</a>
 
     <div class="container">
         <form action="" method="POST">

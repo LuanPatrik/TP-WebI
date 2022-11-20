@@ -42,7 +42,7 @@
     </div>
     <div class="container">
         <div class="logo">
-            <img src="../../Assets/user.png" alt="Logo">
+            <img src="../../Assets/logo.png" alt="Logo">
         </div>
         <form action="" method="POST" class="form">
             <input type="text" placeholder="Usuário" name="usuario" class="input">
