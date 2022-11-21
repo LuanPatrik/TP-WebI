@@ -11,7 +11,7 @@
         window.addEventListener('load', () => {
             document.querySelector('button').addEventListener('click', () => {
                 const dados = new FormData(document.forms[0]);
-                const config ={
+                const config = {
                     method: 'POST',
                     body: dados
                 };
@@ -22,13 +22,12 @@
                 .then((json) => {
                     console.log(json);
                     let mensagem = document.querySelector('.mensagem p');
-                    let div = document.querySelector('.mensagem');
                     mensagem.innerText = json.mensagem;
                     if (json.status == 'ok') {
-                        div.style.backgroundColor = 'green';
-                        // limparCampos();
+                        mensagem.style.backgroundColor = 'green';
+                        limparCampos();
                     }else{
-                        div.style.backgroundColor = 'red';
+                        mensagem.style.backgroundColor = 'red';
                     }
                 })
             });
@@ -39,11 +38,6 @@
         })
 
         function limparCampos(){
-            document.getElementById('name').value = '';
-            document.getElementById('cpf').value = '';
-            document.getElementById('data_nasc').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('usuario').value = '';
             document.getElementById('senha').value = '';
             document.getElementById('confirmarSenha').value = '';
         }

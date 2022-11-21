@@ -7,7 +7,7 @@
 
     $obj = new Usuario();
     $dao = new DAOusuario();
-
+    $retorno = [];
     $id = $_SESSION['id_usuario'];
     $nome = filter_input(INPUT_POST, 'name');
     $cpf = filter_input(INPUT_POST, 'cpf');
@@ -31,4 +31,3 @@
         $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
     }
     echo json_encode($retorno);
-?>

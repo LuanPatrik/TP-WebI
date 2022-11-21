@@ -34,7 +34,7 @@
 
         public function atualizar(Usuario $usuario)
         {
-            $sql = 'UPDATE usuario SET nome = ?, cpf = ?, data_nasc = ?, email = ?, usuario = ?, senha = ? WHERE id = ?;';
+            $sql = 'UPDATE usuario SET nome = ?, cpf = ?, data_nasc = ?, email = ?, usuario = ?, senha = ? WHERE id_usuario= ?;';
             
             $obj = Conexao::getPreparedStatement($sql);
             $obj->bindValue(1,$usuario->getNome());
