@@ -74,8 +74,8 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <label for="telefone">Telefone</label>
                     <input type="text" name="telefone" id="telefone" class="input" required>
+                    <label for="telefone" class="title">Telefone</label>
                 </div>
                 <br><br>
                 <div class="inputBox">

@@ -25,12 +25,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fde3a7d7;
+    background-color: #B2D9F7;
     padding: 1rem;
 }
 
 .form-image img{
-    width: 31rem;
+    /* width: 31rem; */
 }
 
 .form{
@@ -51,7 +51,7 @@ body{
 
 .atualizar-button{
     display: flex;
-    align-items: center;
+    justify-content: flex-end;
 }
 
 .atualizar-button button{
@@ -94,52 +94,9 @@ body{
     color: rgb(29, 26, 26);
 }
 
-/* .container{
-    display: flex;
-    align-items: center;
-    background-color: #487AA1;
-    padding: 30px;
-    width: 25%;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    border: 1px solid black;
-    border-radius: 20px;
-}
-
-.title{
-    color: white;
-}
-
-.input{
-    background: none;
-    border: none;
-    border-bottom: 1.5px solid white;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    width: 120%;
-    margin-top: 7px;
-}
-
-#submit{
-    background-color: #24425A;
-    padding: 15px;
-    width: 60%;
-    border: none;
-    border-radius: 25px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#submit:hover{
-    background-color: #2D5371;
-}*/
-
 .mensagem{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -152,6 +109,6 @@ body{
     border-radius: 5px;
     font-size: 15px;
     color: white;
-    margin-top: 42%;
-    width: 25%;
+    width: 35%;
+    margin-top: 10px;
 }

@@ -59,7 +59,7 @@
 
     <div class="container">
         <div class="form-image">
-            <img src="../../Assets/user.png" alt="Usuário">
+            <img src="../../Assets/perfil.svg" alt="Usuário">
         </div>
         <div class="form">
             <form action="">
@@ -105,59 +105,11 @@
                 <div class="atualizar-button">
                     <button name="submit" id="submit">Salvar</button>
                 </div>
+                <div class="mensagem">
+                    <p></p>
+                </div>
             </form>
         </div>
-    </div>
-
-    <!-- <div class="container">
-        <form action="" method="POST">
-            <div class="inputBox">
-                <label for="name" class="title">Nome</label>
-                <br>
-                <input type="text" name="name" id="name" class="input" value="<?php echo $nome?>">
-            </div>
-            <br><br>
-            <div class="inputBox">
-                <label for="cpf" class="title">CPF</label>
-                <br>
-                <input type="text" name="cpf" id="cpf" class="input" value="<?php echo $cpf?>">
-            </div>
-            <br><br>
-            <div class="inputBox">
-                <label for="date" class="title">Data de Nascimento</label>
-                <br>
-                <input type="date" name="data_nasc" id="data_nasc" class="input" value="<?php echo $data_nasc?>">
-            </div>
-            <br><br>
-            <div class="inputBox">
-                <label for="email" class="title">E-mail</label>
-                <br>
-                <input type="email" name="email" id="email" class="input" value="<?php echo $email?>">
-            </div>
-            <br><br>
-            <div class="inputBox">
-                <label for="usuario" class="title">Usuário</label>
-                <br>
-                <input type="text" name="usuario" id="usuario" class="input" value="<?php echo $usuario?>">
-            </div>
-            <br><br>
-            <div class="inputBox">
-                <label for="senha" class="title">Senha</label>
-                <br>
-                <input type="password" name="senha" id="senha" class="input" required>
-            </div>
-            <br><br>
-            <div class="inputBox">
-                <label for="confirmarSenha" class="title">Confirme sua Senha</label>
-                <br>
-                <input type="password" name="confirmarSenha" id="confirmarSenha" class="input" required>
-            </div>
-            <br><br>
-            <button name="submit" id="submit">Salvar</button>
-        </form>
-    </div> -->
-    <div class="mensagem">
-        <p></p>
     </div>
 </body>
 </html>
