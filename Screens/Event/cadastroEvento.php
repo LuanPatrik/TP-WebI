@@ -3,6 +3,11 @@
     require_once '../../DAO/conexao.php';
     require_once '../../DAO/DAOEvento.php';
 
+    if (isset($_FILES['arquivo'])) {
+        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
+        $novo_nome = md5(time());
+    }
+
     $obj = new Evento();
     $dao = new DAOEvento();
 

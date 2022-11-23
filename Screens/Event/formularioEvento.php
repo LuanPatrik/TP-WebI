@@ -68,10 +68,15 @@
     </header>
     
     <div class="container">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend><b>Formulário de Evento</b></legend>
                 <br>
+                <div class="inputBox">
+                    <label for="arquivo">Imagem do Evento</label>
+                    <input type="file" name="arquivo" required>
+                </div>
+                <br><br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="input" required>
                     <label for="name" class="title">Nome do Evento</label>
