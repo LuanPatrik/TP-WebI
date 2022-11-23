@@ -9,6 +9,7 @@
 
         $usuario = filter_input(INPUT_POST, 'usuario');
         $senha = filter_input(INPUT_POST, 'senha');
+        echo 'Senha'.$senha;
 
         $result = $dao->verificaUsuario($usuario, $senha);
 
@@ -40,7 +41,34 @@
     <div class="voltar">
         <a href="../Home/home.php"><img src="../../Assets/voltar.png" alt="Voltar"></a>
     </div>
-    <div class="container">
+
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login<br>E divulgue a Próxima Parada</h1>
+            <img src="../../Assets/logo.png" class="img-left" alt="Logo">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <form action="" method="POST">
+                    <h1>Login</h1>
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" placeholder="Usuário" name="usuario" class="input">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" placeholder="Senha" name="senha" class="input">
+                    </div>
+                    <button class="btn-login" type="submit" name="submit">Acessar</button>
+                </form>
+                <div class="cadastro">
+                    <a href="./formularioUsuario.php">Cadastre-se</a>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="container">
         <div class="logo">
             <img src="../../Assets/logo.png" alt="Logo">
         </div>
@@ -54,6 +82,6 @@
         <div class="cadastro">
             <a href="./formularioUsuario.php">Cadastre-se</a>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
