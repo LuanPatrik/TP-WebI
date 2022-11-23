@@ -41,6 +41,7 @@
             document.getElementById('name').value = '';
             document.getElementById('cpf').value = '';
             document.getElementById('data_nasc').value = '';
+            document.getElementById('telefone').value = '';
             document.getElementById('email').value = '';
             document.getElementById('usuario').value = '';
             document.getElementById('senha').value = '';
@@ -73,6 +74,11 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" id="telefone" class="input" required>
+                </div>
+                <br><br>
+                <div class="inputBox">
                     <input type="email" name="email" id="email" class="input" required>
                     <label for="email" class="title">E-mail</label>
                 </div>
@@ -99,6 +105,5 @@
     <div class="mensagem">
         <p></p>
     </div>
-    
 </body>
 </html>

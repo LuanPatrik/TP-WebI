@@ -5,15 +5,17 @@
         private $nome;
         private $cpf;
         private $data_nasc;
+        private $telefone;
         private $email;
         private $usuario;
         private $senha;
 
-        public function __construct($n = null, $c = null, $d = null, $e = null, $u = null, $s = null)
+        public function __construct($n = null, $c = null, $d = null, $t= null, $e = null, $u = null, $s = null)
         {
             $this->nome = $n;
             $this->cpf = $c;
             $this->data_nasc = $d;
+            $this->telefone = $t;
             $this->email = $e;
             $this->usuario = $u;
             $this->senha = $s;
@@ -99,6 +101,18 @@
         public function setSenha($senha)
         {
                 $this->senha = $senha;
+
+                return $this;
+        }
+
+        public function getTelefone()
+        {
+                return $this->telefone;
+        }
+
+        public function setTelefone($telefone)
+        {
+                $this->telefone = $telefone;
 
                 return $this;
         }

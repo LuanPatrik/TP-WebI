@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6F6;
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+}
+
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fde3a7d7;
+    padding: 1rem;
+}
+
+.form-image img{
+    width: 31rem;
+}
+
+.form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+.form-header{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.atualizar-button{
+    display: flex;
+    align-items: center;
+}
+
+.atualizar-button button{
+    width: 25%;
+    border: none;
+    background-color: #487AA1;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    color: white;
+    font-size: 14pt;
+}
+
+.atualizar-button button:hover{
+    background-color: #2D5371;
+}
+
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none solid 1px black;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.input-box input::placeholder{
+    color: rgb(29, 26, 26);
+}
+
+/* .container{
+    display: flex;
+    align-items: center;
+    background-color: #487AA1;
+    padding: 30px;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.title{
+    color: white;
+}
+
+.input{
+    background: none;
+    border: none;
+    border-bottom: 1.5px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 120%;
+    margin-top: 7px;
+}
+
+#submit{
+    background-color: #24425A;
+    padding: 15px;
+    width: 60%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit:hover{
+    background-color: #2D5371;
+}*/
+
+.mensagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    margin-top: 42%;
+    width: 25%;
+}

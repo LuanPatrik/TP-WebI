@@ -12,15 +12,16 @@
 
         public function incluir(Usuario $usuario)
         {
-            $sql = 'INSERT INTO usuario (nome, cpf, data_nasc, email, usuario, senha) VALUES (?,?,?,?,?,?);';
+            $sql = 'INSERT INTO usuario (nome, cpf, data_nasc, telefone, email, usuario, senha) VALUES (?,?,?,?,?,?,?);';
 
             $obj = Conexao::getpreparedStatement($sql);
             $obj->bindValue(1, $usuario->getNome());
             $obj->bindValue(2, $usuario->getCpf());
             $obj->bindValue(3, $usuario->getData_nasc());
-            $obj->bindValue(4, $usuario->getEmail());
-            $obj->bindValue(5, $usuario->getUsuario());
-            $obj->bindValue(6, $usuario->getSenha());
+            $obj->bindValue(4, $usuario->getTelefone());
+            $obj->bindValue(5, $usuario->getEmail());
+            $obj->bindValue(6, $usuario->getUsuario());
+            $obj->bindValue(7, $usuario->getSenha());
 
             if ($obj->execute()) 
             {
@@ -34,16 +35,17 @@
 
         public function atualizar(Usuario $usuario)
         {
-            $sql = 'UPDATE usuario SET nome = ?, cpf = ?, data_nasc = ?, email = ?, usuario = ?, senha = ? WHERE id_usuario= ?;';
+            $sql = 'UPDATE usuario SET nome = ?, cpf = ?, data_nasc = ?, telefone = ?, email = ?, usuario = ?, senha = ? WHERE id_usuario= ?;';
             
             $obj = Conexao::getPreparedStatement($sql);
             $obj->bindValue(1,$usuario->getNome());
             $obj->bindValue(2,$usuario->getCpf());
             $obj->bindValue(3,$usuario->getData_nasc());
-            $obj->bindValue(4,$usuario->getEmail());
-            $obj->bindValue(5, $usuario->getUsuario());
-            $obj->bindValue(6, $usuario->getSenha());
-            $obj->bindValue(7,$usuario->getId_usuario());
+            $obj->bindValue(4,$usuario->getTelefone());
+            $obj->bindValue(5,$usuario->getEmail());
+            $obj->bindValue(6, $usuario->getUsuario());
+            $obj->bindValue(7, $usuario->getSenha());
+            $obj->bindValue(8,$usuario->getId_usuario());
 
             if ($obj->execute()) {
                 return true;
