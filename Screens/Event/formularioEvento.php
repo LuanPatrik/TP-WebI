@@ -1,3 +1,22 @@
+<?php
+    session_start();
+
+    if (isset($_FILES['arquivo'])) {
+        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //Pega a extensão do arquivo
+        $novo_nome = md5(time()) . $extensao; //Defineo nome do arquivo
+        $diretorio = '../../Files/'; //Define o diretório para envio dos arquivod
+
+        if ($extensao != '.jpg' && $extensao != '.png') {
+            echo '<div class="mensagem">
+                    <p>Tipo de Arquivo Inválido!</p>
+                </div>';
+        }else {
+            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome); //Efetua o upload
+            $_POST['nomeArquivo'] = $novo_nome;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +57,7 @@
         })
 
         function limparCampos(){
+            document.getElementById('arquivo').value = '';
             document.getElementById('nome').value = '';
             document.getElementById('data').value = '';
             document.getElementById('cidade').value = '';
@@ -73,8 +93,10 @@
                 <legend><b>Formulário de Evento</b></legend>
                 <br>
                 <div class="inputBox">
-                    <label for="arquivo">Imagem do Evento</label>
-                    <input type="file" name="arquivo" required>
+                    <label for="imgEvento">Imagem do Evento</label>
+                    <br><br>
+                    <label for="arquivo">Selecione uma imagem</label>
+                    <input type="file" name="arquivo" id="arquivo" required>
                 </div>
                 <br><br>
                 <div class="inputBox">

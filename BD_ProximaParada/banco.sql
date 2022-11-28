@@ -4,11 +4,12 @@ USE proximaparada;
 
 CREATE TABLE evento(
 	id_evento INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    imagem VARCHAR(225) NOT NULL,
     nome VARCHAR(225) NOT NULL,
     data_evento DATE NOT NULL,
-    cidade VARCHAR(50),
-    bairro VARCHAR(100),
-    rua VARCHAR(100),
+    cidade VARCHAR(50) NOT NULL,
+    bairro VARCHAR(100) NOT NULL,
+    rua VARCHAR(100) NOT NULL,
     valor DOUBLE
 );
 

@@ -90,6 +90,17 @@ legend{
     color: #B2D9F7;
 }
 
+/* input[type="file"] {
+    display: none;
+}
+
+label[for="arquivo"]{
+    background-color: #487AA1;
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+} */
+
 #submit{
     background-color: #24425A;
     width: 100%;

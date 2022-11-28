@@ -9,7 +9,6 @@
 
         $usuario = filter_input(INPUT_POST, 'usuario');
         $senha = filter_input(INPUT_POST, 'senha');
-        echo 'Senha'.$senha;
 
         $result = $dao->verificaUsuario($usuario, $senha);
 

@@ -12,15 +12,16 @@
 
         public function incluir(Evento $evento)
         {
-            $sql = 'INSERT INTO evento (nome, data_evento, cidade, bairro, rua, valor) VALUES (?,?,?,?,?,?);';
+            $sql = 'INSERT INTO evento (imagem, nome, data_evento, cidade, bairro, rua, valor) VALUES (?,?,?,?,?,?,?);';
 
             $obj = Conexao::getpreparedStatement($sql);
-            $obj->bindValue(1, $evento->getNome());
-            $obj->bindValue(2, $evento->getData_evento());
-            $obj->bindValue(3, $evento->getCidade());
-            $obj->bindValue(4, $evento->getBairro());
-            $obj->bindValue(5, $evento->getRua());
-            $obj->bindValue(6, $evento->getValor());
+            $obj->bindValue(1, $evento->getImagem());
+            $obj->bindValue(2, $evento->getNome());
+            $obj->bindValue(3, $evento->getData_evento());
+            $obj->bindValue(4, $evento->getCidade());
+            $obj->bindValue(5, $evento->getBairro());
+            $obj->bindValue(6, $evento->getRua());
+            $obj->bindValue(7, $evento->getValor());
 
             if ($obj->execute()) 
             {
@@ -32,11 +33,19 @@
             }
         }
 
-        public function excluir(Evento $evento)
+        public function atualizar(Evento $evento)
         {
-            $sql = 'DELETE FROM evento WHERE id = ?;';
+            $sql = 'UPDATE evento SET imagem = ?, nome = ?, data_evento = ?, cidade = ?, bairro = ?,
+                    rua = ?, valor = ? WHERE id = ?;';
             $obj = Conexao::getPreparedStatement($sql);
-            $obj->bindValue(1,$evento->getId_evento());
+            $obj->bindValue(1,$evento->getImagem());
+            $obj->bindValue(2,$evento->getNome());
+            $obj->bindValue(3,$evento->getData_evento());
+            $obj->bindValue(4,$evento->getCidade());
+            $obj->bindValue(5, $evento->getBairro());
+            $obj->bindValue(6, $evento->getRua());
+            $obj->bindValue(7, $evento->getValor());
+            $obj->bindValue(8,$evento->getId_evento());
 
             if ($obj->execute()) {
                 return true;
@@ -45,18 +54,11 @@
             }
         }
 
-        public function atualizar(Evento $evento)
+        public function excluir(Evento $evento)
         {
-            $sql = 'UPDATE evento SET nome = ?, data_evento = ?, cidade = ?, bairro = ?,
-                    rua = ?, valor = ? WHERE id = ?;';
+            $sql = 'DELETE FROM evento WHERE id = ?;';
             $obj = Conexao::getPreparedStatement($sql);
-            $obj->bindValue(1,$evento->getNome());
-            $obj->bindValue(2,$evento->getData_evento());
-            $obj->bindValue(3,$evento->getCidade());
-            $obj->bindValue(4, $evento->getBairro());
-            $obj->bindValue(5, $evento->getRua());
-            $obj->bindValue(6, $evento->getValor());
-            $obj->bindValue(7,$evento->getId_evento());
+            $obj->bindValue(1,$evento->getId_evento());
 
             if ($obj->execute()) {
                 return true;

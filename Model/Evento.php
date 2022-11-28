@@ -2,6 +2,7 @@
     class Evento
     {
         private $id_evento;
+        private $imagem;
         private $nome;
         private $data_evento;
         private $cidade;
@@ -9,8 +10,9 @@
         private $rua;
         private $valor;
 
-        public function __construct($n = null, $d = null, $c = null, $b = null, $r = null, $v = null)
+        public function __construct($i = null, $n = null, $d = null, $c = null, $b = null, $r = null, $v = null)
         {
+            $this->imagem = $i;
             $this->nome = $n;
             $this->data_evento = $d;
             $this->cidade = $c;
@@ -27,6 +29,18 @@
         public function setId_evento($id_evento)
         {
             $this->id_evento = $id_evento;
+
+            return $this;
+        }
+
+        public function getImagem()
+        {
+            return $this->imagem;
+        }
+
+        public function setImagem($imagem)
+        {
+            $this->imagem = $imagem;
 
             return $this;
         }
