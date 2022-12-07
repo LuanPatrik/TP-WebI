@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    $novo_nome = '';
+
     if (isset($_FILES['arquivo'])) {
         $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //Pega a extensão do arquivo
         $novo_nome = md5(time()) . $extensao; //Defineo nome do arquivo
@@ -12,7 +14,6 @@
                 </div>';
         }else {
             move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome); //Efetua o upload
-            $_POST['nomeArquivo'] = $novo_nome;
         }
     }
 ?>
@@ -97,6 +98,7 @@
                     <br><br>
                     <label for="arquivo">Selecione uma imagem</label>
                     <input type="file" name="arquivo" id="arquivo" required>
+                    <input type="hidden" name="nomeImagem" value="<?php echo $novo_nome ?>">
                 </div>
                 <br><br>
                 <div class="inputBox">
