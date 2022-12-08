@@ -7,7 +7,7 @@
     $obj = new Evento();
     $dao = new DAOEvento();
 
-    $imagem = filter_input(INPUT_POST, 'nomeImagem');
+    $imagem = $_SESSION['nomeImagem'];
     $nome = filter_input(INPUT_POST, 'nome');
     $data = filter_input(INPUT_POST, 'data');
     $cidade = filter_input(INPUT_POST, 'cidade');

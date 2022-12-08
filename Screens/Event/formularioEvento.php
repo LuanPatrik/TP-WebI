@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $novo_nome = '';
+    $_SESSION['nomeImagem'] = '';
 
     if (isset($_FILES['arquivo'])) {
         $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //Pega a extensão do arquivo
@@ -14,6 +14,7 @@
                 </div>';
         }else {
             move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome); //Efetua o upload
+            $_SESSION['nomeImagem'] = $novo_nome;
         }
     }
 ?>
@@ -31,6 +32,7 @@
         window.addEventListener('load', () => {
             document.querySelector('button').addEventListener('click', () => {
                 const dados = new FormData(document.forms[0]);
+                console.log(<?php $_SESSION['nomeImagem'] ?>);
                 const config ={
                     method: 'POST',
                     body: dados
@@ -98,7 +100,6 @@
                     <br><br>
                     <label for="arquivo">Selecione uma imagem</label>
                     <input type="file" name="arquivo" id="arquivo" required>
-                    <input type="hidden" name="nomeImagem" value="<?php echo $novo_nome ?>">
                 </div>
                 <br><br>
                 <div class="inputBox">
