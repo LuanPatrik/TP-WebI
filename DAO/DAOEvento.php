@@ -12,7 +12,7 @@
 
         public function incluir(Evento $evento)
         {
-            $sql = 'INSERT INTO evento (imagem, nome, data_evento, cidade, bairro, rua, valor) VALUES (?,?,?,?,?,?,?);';
+            $sql = 'INSERT INTO evento (imagem, nome, data_evento, cidade, bairro, rua, valor, id_usuario) VALUES (?,?,?,?,?,?,?,?);';
 
             $obj = Conexao::getpreparedStatement($sql);
             $obj->bindValue(1, $evento->getImagem());
@@ -22,6 +22,7 @@
             $obj->bindValue(5, $evento->getBairro());
             $obj->bindValue(6, $evento->getRua());
             $obj->bindValue(7, $evento->getValor());
+            $obj->bindValue(8, $evento->getId_usuario());
 
             if ($obj->execute()) 
             {

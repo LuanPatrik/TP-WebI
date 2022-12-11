@@ -1,22 +1,53 @@
 <?php
     session_start();
-
-    $_SESSION['nomeImagem'] = '';
+    $idLogado = $_SESSION['id_usuario'];
 
     if (isset($_FILES['arquivo'])) {
-        $extensao = strtolower(substr($_FILES['arquivo']['name'], -4)); //Pega a extensão do arquivo
-        $novo_nome = md5(time()) . $extensao; //Defineo nome do arquivo
-        $diretorio = '../../Files/'; //Define o diretório para envio dos arquivod
+        $arquivo = $_FILES['arquivo'];
+        $pasta = '../../Files/'; //Define o diretório para envio dos arquivos
+        $nomeArquivo = $arquivo['name'];
+        $novoNome = uniqid();
+        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
 
-        if ($extensao != '.jpg' && $extensao != '.png') {
-            echo '<div class="mensagem">
-                    <p>Tipo de Arquivo Inválido!</p>
-                </div>';
+        if ($extensao != 'jpg' && $extensao != 'png') {
+            die('Tipo de arquivo Inválido');
+        }
+        $path = $pasta . $novoNome . "." . $extensao;
+        $arquivoNome = $novoNome . "." . $extensao;
+
+        require_once '../../Model/Evento.php';
+        require_once '../../DAO/conexao.php';
+        require_once '../../DAO/DAOEvento.php';
+    
+        $obj = new Evento();
+        $dao = new DAOEvento();
+    
+        $imagem = $arquivoNome;
+        $nome = filter_input(INPUT_POST, 'nome');
+        $data = filter_input(INPUT_POST, 'data');
+        $cidade = filter_input(INPUT_POST, 'cidade');
+        $bairro = filter_input(INPUT_POST, 'bairro');
+        $rua = filter_input(INPUT_POST, 'rua');
+        $valor = filter_input(INPUT_POST, 'valor');
+    
+        $obj->setImagem($imagem);
+        $obj->setNome($nome);
+        $obj->setData_evento($data);
+        $obj->setCidade($cidade);
+        $obj->setBairro($bairro);
+        $obj->setRua($rua);
+        $obj->setValor($valor);
+        $obj->setId_usuario($idLogado);
+    
+        if ($imagem && $nome && $data && $cidade && $bairro && $rua && $valor) {
+            $dao->incluir($obj);
+            move_uploaded_file($arquivo['tmp_name'], $path); //Efetua o upload
+            $retorno = ['status' => 'ok', 'mensagem' => 'Evento cadastrado com sucesso!'];
         }else {
-            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome); //Efetua o upload
-            $_SESSION['nomeImagem'] = $novo_nome;
+            $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
         }
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +59,15 @@
     <title>Cadastro de Evento</title>
     <link rel="stylesheet" href="../../Styles/Event/cadastro.css">
 
-    <script>
+    <!-- <script>
         window.addEventListener('load', () => {
             document.querySelector('button').addEventListener('click', () => {
                 const dados = new FormData(document.forms[0]);
-                console.log(<?php $_SESSION['nomeImagem'] ?>);
                 const config ={
                     method: 'POST',
                     body: dados
                 };
-                fetch('./cadastroEvento.php', config)
+                fetch('formularioEvento.php', config)
                 .then((response) => {
                     return response.json();
                 })
@@ -68,7 +98,7 @@
             document.getElementById('rua').value = '';
             document.getElementById('valor').value = '';
         }
-    </script>
+    </script> -->
 
 </head>
 <body>
@@ -97,9 +127,8 @@
                 <br>
                 <div class="inputBox">
                     <label for="imgEvento">Imagem do Evento</label>
-                    <br><br>
-                    <label for="arquivo">Selecione uma imagem</label>
-                    <input type="file" name="arquivo" id="arquivo" required>
+                    <br>
+                    <input type="file" name="arquivo" required>
                 </div>
                 <br><br>
                 <div class="inputBox">
@@ -135,7 +164,6 @@
                 <Button name="submit" id="submit">Salvar</Button>
             </fieldset>
         </form>
-        
     </div>
     <div class="mensagem">
         <p></p>

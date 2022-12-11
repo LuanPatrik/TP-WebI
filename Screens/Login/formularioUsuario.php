@@ -50,6 +50,10 @@
     </script>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <div class="voltar">
         <a href="../Login/login.php"><img src="../../Assets/voltar.png" alt="Voltar"></a>
     </div>
@@ -64,7 +68,7 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="cpf" id="cpf" class="input" required>
+                    <input type="numeric" name="cpf" id="cpf" class="input" maxlength="11" onkeypress="$(this).mask('000.000.000-00')" required>
                     <label for="cpf" class="title">CPF</label>
                 </div>
                 <br><br>
@@ -74,7 +78,7 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="telefone" id="telefone" class="input" required>
+                    <input type="tel" name="telefone" id="telefone" class="input" onkeypress="$(this).mask('(00) 00000-0000')" required>
                     <label for="telefone" class="title">Telefone</label>
                 </div>
                 <br><br>

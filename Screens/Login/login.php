@@ -22,9 +22,9 @@
             $_SESSION['usuario'] = $result[0]['usuario'];
             header('Location: ../Home/home.php');
         }
-        // else {
-        //     unset($_SESSION['usuario']);
-        // }
+        else {
+            
+        }
     }
 ?>
 
@@ -36,6 +36,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Styles/Login/login.css">
     <title>Login</title>
+
+    <script>
+            
+    </script>
 </head>
 <body>
     <div class="voltar">

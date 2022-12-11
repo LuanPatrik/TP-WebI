@@ -9,6 +9,7 @@
         private $bairro;
         private $rua;
         private $valor;
+        private $id_usuario;
 
         public function __construct($i = null, $n = null, $d = null, $c = null, $b = null, $r = null, $v = null)
         {
@@ -113,6 +114,18 @@
         public function setValor($valor)
         {
             $this->valor = $valor;
+
+            return $this;
+        }
+
+        public function getId_usuario()
+        {
+            return $this->id_usuario;
+        }
+
+        public function setId_usuario($id_usuario)
+        {
+            $this->id_usuario = $id_usuario;
 
             return $this;
         }

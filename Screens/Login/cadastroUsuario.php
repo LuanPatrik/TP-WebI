@@ -24,11 +24,15 @@
     $obj->setUsuario($usuario);
     $obj->setSenha($senha);
 
-    if ($nome && $data_nasc && $cpf && $telefone && $email && $usuario && $senha) {
-        $dao->incluir($obj);
-        $retorno = ['status' => 'ok', 'mensagem' => 'Usuário cadastrado com sucesso!'];
+    if (strlen($cpf) < 11 || strlen($data_nasc) < 8 || strlen($telefone) < 11 || strlen($email) < 12){
+        $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos corretamente!'];
     }else {
-        $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
+        if ($nome && $data_nasc && $cpf && $telefone && $email && $usuario && $senha) {
+            $dao->incluir($obj);
+            $retorno = ['status' => 'ok', 'mensagem' => 'Usuário cadastrado com sucesso!'];
+        }else {
+            $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
+        }
     }
     echo json_encode($retorno);
 ?>

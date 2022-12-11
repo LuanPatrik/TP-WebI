@@ -11,8 +11,8 @@ body{
 .tabela{
     background-color: #B2D9F7;
     border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
+    /* border-radius: 10px; */
+    padding: 35px;
     width: 25%;
     margin: 10px 40px;
 }
