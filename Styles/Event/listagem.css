@@ -9,10 +9,17 @@ body{
 }
 
 .tabela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #B2D9F7;
     border: 1px solid black;
     /* border-radius: 10px; */
     padding: 35px;
     width: 25%;
-    margin: 10px 40px;
+    margin:40px;
+}
+
+.imagem img{
+    width :100%;
 }

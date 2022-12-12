@@ -29,10 +29,6 @@ body{
     padding: 1rem;
 }
 
-.form-image img{
-    /* width: 31rem; */
-}
-
 .form{
     width: 50%;
     display: flex;
@@ -44,18 +40,20 @@ body{
 }
 
 .form-header{
-    margin-bottom: 3rem;
+    margin-top: 4rem;
     display: flex;
+    justify-content: center;
+}
+
+.alignButton{
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+
 }
 
-.atualizar-button{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.atualizar-button button{
-    width: 25%;
+.action-button button{
     border: none;
     background-color: #487AA1;
     padding: 15px;
@@ -63,9 +61,10 @@ body{
     border-radius: 25px;
     color: white;
     font-size: 14pt;
+    width: 120%;
 }
 
-.atualizar-button button:hover{
+.action-button button:hover{
     background-color: #2D5371;
 }
 
@@ -99,6 +98,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 45px;
 }
 
 .mensagem p{
@@ -109,6 +109,5 @@ body{
     border-radius: 5px;
     font-size: 15px;
     color: white;
-    width: 35%;
-    margin-top: 10px;
+    width: 100%;
 }

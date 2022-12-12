@@ -10,6 +10,15 @@
             return $id;
         }
 
+        public function getInformacoes($id)
+        {
+            $sql = "SELECT * FROM usuario WHERE id_usuario = '$id';";
+            $pst = Conexao::getPreparedStatement($sql);
+            $pst->execute();
+            $informacoes = $pst->fetchAll(PDO::FETCH_ASSOC);
+            return $informacoes;
+        }
+
         public function incluir(Usuario $usuario)
         {
             $sql = 'INSERT INTO usuario (nome, cpf, data_nasc, telefone, email, usuario, senha) VALUES (?,?,?,?,?,?,?);';
@@ -56,7 +65,7 @@
 
         public function excluir(Usuario $usuario)
         {
-            $sql = 'DELETE FROM usuario WHERE id = ?;';
+            $sql = 'DELETE FROM usuario WHERE id_usuario = ?;';
             $obj = Conexao::getPreparedStatement($sql);
             $obj->bindValue(1,$usuario->getId_usuario());
 

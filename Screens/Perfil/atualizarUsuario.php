@@ -21,15 +21,20 @@
     $obj->setNome($nome);
     $obj->setCpf($cpf);
     $obj->setData_nasc($data_nasc);
+    $obj->setData_nasc($email);
     $obj->setTelefone($telefone);
-    $obj->setEmail($email);
     $obj->setUsuario($usuario);
     $obj->setSenha($senha);
 
-    if ($nome && $data_nasc && $telefone && $cpf && $email && $usuario && $senha) {
-        $dao->atualizar($obj);
-        $retorno = ['status' => 'ok', 'mensagem' => 'Usuário atualizado com sucesso!'];
+    if (strlen($cpf) < 11 || strlen($data_nasc) < 8 || strlen($telefone) < 11 || strlen($email) < 12) {
+        $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos corretamente!'];
     }else {
-        $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
+        if ($nome && $data_nasc && $cpf && $telefone && $email && $usuario && $senha) {
+            $dao->incluir($obj);
+            $retorno = ['status' => 'ok', 'mensagem' => 'Usuário cadastrado com sucesso!'];
+        }else {
+            $retorno = ['status' => 'error', 'mensagem' => 'Preencha todos os campos!'];
+        }
     }
     echo json_encode($retorno);
+?>
